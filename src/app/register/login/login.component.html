@@ -1,0 +1,20 @@
+<div class="container-sm">
+    <h5 class="text-center p-4">Login Form</h5>
+    <form [formGroup]="loginForm">
+        <input type="text" class="form-control mb-2" placeholder="Username" formControlName="username" />
+        <div class="error" *ngIf="loginForm.get('username')?.dirty">
+            <span *ngIf="loginForm.get('username')?.errors?.['required']">Please enter name</span>
+            <span *ngIf="loginForm.get('username')?.errors?.['maxlength']">Username Length should not exceed 20 charecters</span>
+        </div>
+        <input type="password" class="form-control mb-2" placeholder="Password" formControlName="password" />
+        <div class="error" *ngIf="loginForm.get('password')?.dirty">
+            <span *ngIf="loginForm.get('password')?.errors?.['required']">Please enter password</span>
+            <span *ngIf="loginForm.get('password')?.errors?.['minlength']">password should be atleast 6 charecters</span>
+        </div>
+    </form>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary" (click)="logIn(loginForm)" [disabled]="loginForm.invalid">LogIn</button>
+       
+      </div>
+      
+</div>

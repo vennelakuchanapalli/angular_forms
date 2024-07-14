@@ -1,0 +1,45 @@
+<ul>
+  <li><a routerLink="./addproduct" routerLinkActive="active" (click)="isshow = false">Addproduct</a> <br />
+  </li>
+  <!-- 
+  <li><a routerLink="./cartlist" routerLinkActive="active" (click)="isshow = false">cartlist</a> <br />
+  </li> -->
+  <!-- <li><a routerLink=":id" routerLinkActive="active" (click)="isshow = false">productdetails</a>
+    </li> -->
+</ul>
+<router-outlet></router-outlet>
+<form #filterProducts="ngForm">
+  <input type="text" class="input" name="filterproduct" ngModel #filterproduct="ngModel" placeholder="Filter Product By Name" />
+</form>
+<div class="container-sm" *ngIf="isshow" style="height: 550px; width: 96%; overflow: scroll;">
+  <h4 class="text-center ">Product List</h4>
+  <!-- <p class="text-center ">{{msg}}</p> -->
+
+
+
+  <table class="table table-striped table-hover table-warning mt-5">
+    <thead>
+      <tr>
+        <th *ngFor="let header of tableheader">{{header}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-active" *ngFor="let product of productlists | pipe : filterproduct.value">
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.sku}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.stock_quantity}}</td>
+        <td><i class="fa fa-shopping-cart" aria-hidden="true" (click)="addToCart(product)"></i>
+
+
+          <!-- <i class="fa fa-check" aria-hidden="true" *ngIf="isAddedToCart"></i> -->
+
+        </td>
+        <td><i class="fa fa-info-circle" aria-hidden="true" (click)="showdetails(product.id)"></i></td>
+      </tr>
+
+
+    </tbody>
+  </table>
+</div>

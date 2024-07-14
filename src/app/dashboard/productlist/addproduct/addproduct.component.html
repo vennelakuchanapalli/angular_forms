@@ -1,0 +1,55 @@
+
+<div class="container mt-5">
+    <button routerLink="./productlist">back to dashboard</button>
+    <h2 class="text-center p-4">Add New Product </h2>
+    <form [formGroup]="addProductForm">
+        <div class="mb-3">
+            <label for="productName" class="form-label">Name</label><br/>
+            <span class="error" *ngIf="addProductForm.get('productName')?.errors?.['required']">mandatory*</span>
+
+            <input type="text" class="form-control mb-2" id="productName" formControlName="productName">
+            <!-- <div class="error" *ngIf="addProductForm.get('productName')?.dirty"> -->
+            <!-- </div> -->
+        </div>
+        <div class="mb-3">
+            <label for="productDescription" class="form-label">Description</label>
+            <textarea class="form-control mb-2" id="productDescription" rows="3"
+                formControlName="productDescription"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="productPrice" class="form-label">Price ₹</label><br/>
+            <span class="error" *ngIf="addProductForm.get('productPrice')?.errors?.['required']">mandatory*</span>
+
+            <input type="number" class="form-control mb-2" id="productPrice" formControlName="productPrice">
+            <!-- <div class="error" *ngIf="addProductForm.get('productPrice')?.dirty"> -->
+            <!-- </div> -->
+        </div>
+        <div class="mb-3">
+            <label for="productSKU" class="form-label">SKU</label><br/>
+            <span class="error" *ngIf="addProductForm.get('productSKU')?.errors?.['required']">mandatory*</span>
+
+            <input type="text" class="form-control mb-2" id="productSKU" formControlName="productSKU">
+            <!-- <div class="error" *ngIf="addProductForm.get('productSKU')?.dirty"> -->
+            <!-- </div> -->
+        </div>
+        <div class="mb-3">
+            <label for="productCategory" class="form-label">Category</label>
+            <input type="text" class="form-control mb-2" id="productCategory" formControlName="productCategory">
+        </div>
+        <div class="mb-3">
+            <label for="productStockQuantity" class="form-label">Stock Quantity</label>
+            <input type="number" class="form-control mb-2" id="productStockQuantity"
+                formControlName="productStockQuantity">
+        </div>
+        <!-- <div class="mb-3">
+            <label for="productImageURL" class="form-label">Image URL</label>
+            <input type="text" class="form-control" id="productImageURL" value="Product41.png">
+        </div> -->
+
+    </form>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <p class="success">{{msg}}</p>
+        <button class="btn btn-success" (click)="addProducutToList(addProductForm)"
+           >submit</button>
+    </div>
+</div>

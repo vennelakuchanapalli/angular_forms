@@ -1,0 +1,105 @@
+<!-- <div class="container-sm ">
+    <h4 class="text-center p-4">Signup Form</h4>
+    <form [formGroup]="reactiveForm">
+    <div class="form-floating mb-3 bg-light">
+        <input type="text" class="form-control" id="floatingname" placeholder="Username"
+         formControlName="username"  >
+        <label for="floatingname">Username</label>
+    </div>
+    <div class="form-floating mb-3 bg-light">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+         formControlName="email"  >
+        <label for="floatingInput">Email address</label>
+    </div>
+    
+    <div class="form-floating mb-3 bg-light">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+         formControlName="password">
+        <label for="floatingPassword">Password</label>
+    </div>
+    <div class="form-floating mb-3 bg-light">
+        <input type="number" class="form-control" id="floatingNumber" placeholder="Mobilenumber"
+         formControlName="mobilenumber">
+        <label for="floatingNumber">Mobilenumber</label>
+    </div>
+    <div class="form-floating mb-3 bg-light">
+        <input type="text" class="form-control" id="floatingaddress" placeholder="Address"
+         formControlName="address">
+        <label for="floatingaddress">Address</label>
+    </div>
+    <div class="form-floating mb-3 bg-light">
+        <input type ="text" class="form-control" id="floatingstate" placeholder="State" 
+        formControlName="state">
+        <label for="floatingstate">State</label>
+    </div>
+</form>
+
+    
+</div> -->
+<!-- <div class="container-sm">
+    <h5 class="text-center p-4">Signup Form</h5>
+    <form [formGroup]="reactiveForm">
+        <input type="text" class="form-control mb-3 " placeholder="Username" formControlName="username">
+        <div class="error" *ngIf="reactiveForm.get('username')?.dirty">
+            <span *ngIf="reactiveForm.get('username')?.error?.['required']">Username Is Required</span>
+        </div>
+      
+        <input type="email" class="form-control mb-3 " placeholder="name@example.com" formControlName="email">
+        <div class="error" *ngIf="reactiveForm.get('email')?.dirty">
+         
+            <span *ngIf="reactiveForm.get('email')?.error?.['required']">Email Is Required</span>
+            <span *ngIf="reactiveForm.get('email')?.error?.['email']">Email Should Be Valid</span>
+        </div>
+        
+       <input type="password" class="form-control mb-3" placeholder="Password" formControlName="password">
+         <div class="error" *ngIf="reactiveForm.get('password')?.dirty">
+            <span *ngIf="reactiveForm.get('password')?.error?.['required']">Please enter password</span>
+            <span *ngIf="reactiveForm.get('password')?.error?.['maxLength']">Password Lenght Should Include 6
+                Charecters</span>
+        </div> -->
+        <!-- <div class="error" *ngIf="reactiveForm.get('password')?.dirty && reactiveForm.get('password')?.errors">
+            <span *ngIf="reactiveForm.get('password')?.errors?.['required']">Please enter password</span>
+            <span *ngIf="reactiveForm.get('password')?.errors?.['minLength']">Password length should be at least 6 characters</span>
+          </div>
+          
+        <input type="number" class="form-control mb-3" placeholder="Mobilenumber" formControlName="mobilenumber">
+        <input type="text" class="form-control mb-3" placeholder="Address" formControlName="address">
+        <input type="text" class="form-control mb-3" placeholder="State" formControlName="state">
+    </form>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary" (click)="signup(reactiveForm)" [disabled]="reactiveForm.invalid">Sign
+            Up</button>
+    </div>
+</div>  -->
+<div class="container-sm">
+    <h5 class="text-center p-4">Signup Form</h5>
+    <form [formGroup]="reactiveForm">
+      <input type="text" class="form-control mb-3" placeholder="Username" formControlName="username">
+      <div class="error" *ngIf="reactiveForm.get('username')?.dirty">
+        <span *ngIf="reactiveForm.get('username')?.errors?.['required']">Username Is Required</span>
+      </div>
+  
+      <input type="email" class="form-control mb-3" placeholder="name@example.com" formControlName="email">
+      <div class="error" *ngIf="reactiveForm.get('email')?.dirty">
+        <span *ngIf="reactiveForm.get('email')?.errors?.['required']">Email Is Required</span>
+        <span *ngIf="reactiveForm.get('email')?.errors?.['email']">Email Should Be Valid</span>
+      </div>
+  
+      <input type="password" class="form-control mb-3" placeholder="Password" formControlName="password">
+      <div class="error" *ngIf="reactiveForm.get('password')?.dirty && reactiveForm.get('password')?.errors">
+        <span *ngIf="reactiveForm.get('password')?.errors?.['required']">Please enter password</span>
+        <span *ngIf="reactiveForm.get('password')?.errors?.['minlength']">Password length should be at least 6 characters</span>
+      </div>
+  
+      <input type="number" class="form-control mb-3" placeholder="Mobilenumber" formControlName="mobilenumber">
+      <input type="text" class="form-control mb-3" placeholder="Address" formControlName="address">
+      <input type="text" class="form-control mb-3" placeholder="State" formControlName="state">
+    </form>
+    <div class="error">{{msg}}</div>
+    <div class="d-grid gap-2 col-6 mx-auto">
+      
+        <button class="btn btn-primary" (click)="signup(reactiveForm)" [disabled]="reactiveForm.invalid">Sign Up</button>
+        <a routerLink="/login">Already Registerd Go To Login</a>
+    </div>
+  </div>
+  

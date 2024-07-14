@@ -1,0 +1,34 @@
+<marquee><i>Your Cart List is Here. You Can Proceed Further To Place Order</i></marquee>
+<div class="container">
+    <div class="row">
+        <!-- Product details and cart operations -->
+        <div class="col-md-6 mb-3">
+            <div class="card mb-3 bg-light" *ngFor="let product of cartitemslist; let i=index">
+                <div class="card-body" >
+                    <h5 class="card-title" id="product-name">Product Name: {{product.product_name}}</h5>
+                    <p class="card-text">Price: ₹{{product.price}}</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md">
+                        <button class="btn btn-outline-primary btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="remove item" type="button" id="button-minus" (click)="decreaseQty(product)">-</button>
+                     
+                            <button class="btn btn-info btn-sm"  type="button">{{product.quantity}}</button>
+                                              
+                           <button class="btn btn-outline-primary btn-sm" type="button" id="button-plus" data-bs-toggle="tooltip" data-bs-placement="top" title="Add one more" (click)="increaseQty(product)">+</button>
+                            <button class="btn btn-outline-danger btn-sm" (click)="deleteItem(product)">Delete</button>
+                            <button class="btn btn-outline-success btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title=" Poceed To Pay">Pay</button>
+
+                    </div>
+                    <p>Total Price: <b>{{cartItemTotalPrice(product)}}</b> </p>
+                </div>
+            </div>
+        </div>
+        <!-- Grand total -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><i><b>Grand Total :</b></i></h5>
+                    <p class="card-text">₹ {{grandtotal}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

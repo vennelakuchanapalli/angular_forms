@@ -1,0 +1,32 @@
+// .fixed ,h4{
+//     position: fixed;
+//  width: 87%;
+// text-align: center;
+// background-color: rgb(198, 251, 251);
+
+// }
+// .fixedp{
+//     position: fixed;
+//     top: 125px;
+//  width: 87%;
+// text-align: center;
+// background-color: #d1fab9;
+
+
+
+// }
+
+
+.input {
+    color: rgb(8, 8, 8);
+    border: 2px solid #8707ff;
+    border-radius: 10px;
+    padding: 10px 25px;
+    background: transparent;
+    max-width: 250px;
+  }
+  
+  .input:active {
+    box-shadow: 2px 2px 15px #8707ff inset;
+  }
+  

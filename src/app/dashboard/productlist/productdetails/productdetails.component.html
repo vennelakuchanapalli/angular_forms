@@ -1,0 +1,20 @@
+
+
+<div class="card text-dark bg-warning mb-3 m-auto" style="max-width: 30rem ;height: 450px;" *ngIf="isshowdetails">
+  <div class="card-header">Product Information</div>
+  <div class="card-body text-center">
+    <h3>Product Name: {{productdetails[0].name}}</h3>
+    <p>Product id: {{productdetails[0].id}}</p>
+    <p>Description:{{productdetails[0].description}}</p>
+    <p>Product price: {{productdetails[0].price}}</p>
+    <p>SKU Number: {{productdetails[0].sku}}</p>
+    <p>Product category: {{productdetails[0].category}}</p>
+    <p>Stock_quantity: {{productdetails[0].stock_quantity}}</p>
+    <p>Product created_at: {{productdetails[0].created_at}}</p>
+    <p>Product updated_at: {{productdetails[0].updated_at}}</p>
+  </div>
+ 
+    <button class="btn btn-primary" (click)="details()" >OK</button>
+   
+ 
+</div>
